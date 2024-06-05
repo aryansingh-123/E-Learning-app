@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Header from "../components/Header/Header";
 import HeroSection from "../components/Hero-Section/HeroSection";
 import CompanySection from "../components/Company-section/Company";
@@ -13,11 +13,14 @@ import Testimonials from "../components/Testimonial/Testimonials";
 
 import Newsletter from "../components/Newsletter/Newsletter";
 import Footer from "../components/Footer/Footer";
+import Login from "../components/Login/Login";
 
 const Home = () => {
+ 
   return (
     <Fragment>
       <Header />
+
       <HeroSection />
       <CompanySection />
       <AboutUs />

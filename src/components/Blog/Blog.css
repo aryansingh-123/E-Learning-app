@@ -1,0 +1,26 @@
+/* Blog.css */
+
+.blog-header {
+    background-color: 	#7FFFD4; /* Bootstrap primary color */
+    color: #fff;
+  }
+  
+  .blog-body {
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: calc(100vh - 200px); /* Adjust based on your header/footer heights */
+  }
+  
+  .blog-content {
+    padding: 20px;
+  }
+  
+  .blog-content h3 {
+    color: 	#7FFFD4;
+    margin-bottom: 15px;
+  }
+  
+  .blog-content p {
+    color: #333;
+    line-height: 1.6;
+  }
+  

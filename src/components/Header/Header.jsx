@@ -1,6 +1,9 @@
-import React, { useRef } from "react";
-import { Container } from "reactstrap";
+import React, { useRef, useState } from "react";
+import { Container, Button } from "reactstrap";
 import "./header.css";
+import Login from "../Login/Login";
+import Signup from "../Signup/SignUp";
+import Blog from "../Blog/Blog"; // Import the Blog component
 
 const navLinks = [
   {
@@ -18,25 +21,23 @@ const navLinks = [
   {
     display: "Blog",
     url: "#",
+    isBlog: true // Indicate that this is the Blog link
   },
-  {
-    display: "Login",
-    url:"#"
-  },
-  {
-    display: "SignUp",
-    url:"#"
-  }
 ];
 
 const Header = () => {
   const menuRef = useRef();
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [showBlog, setShowBlog] = useState(false); // State for blog modal
 
   const menuToggle = () => menuRef.current.classList.toggle("active__menu");
+  const toggleSignup = () => setShowSignUp(!showSignUp);
+  const toggleLogin = () => setShowLogin(!showLogin);
+  const toggleBlog = () => setShowBlog(!showBlog); // Toggle blog modal
 
   const handleDropdownChange = (e) => {
     const selectedCourse = e.target.value;
-    // Handle the selected course here, such as navigating to the corresponding page
     console.log("Selected course:", selectedCourse);
   };
 
@@ -55,10 +56,14 @@ const Header = () => {
               <ul className="nav__list">
                 {navLinks.map((item, index) => (
                   <li key={index} className="nav__item">
-                    <a href={item.url}>{item.display}</a>
+                    {/* Conditionally render onClick event for Blog link only */}
+                    {item.isBlog ? (
+                      <a href={item.url} onClick={toggleBlog}>{item.display}</a>
+                    ) : (
+                      <a href={item.url}>{item.display}</a>
+                    )}
                   </li>
                 ))}
-                {/* Add the dropdown box for courses */}
                 <li className="nav__item">
                   <select className="nav__dropdown-select" onChange={handleDropdownChange}>
                     <option value="">Courses</option>
@@ -72,21 +77,27 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-
             <div className="nav__right">
-              <p className="mb-0 d-flex align-items-center gap-2">
-                <i className="ri-phone-line"></i> +91 6283725542
-              </p>
+              <Button color="primary" onClick={toggleLogin}>
+                Login
+              </Button>{" "}
+              <Button color="success" onClick={toggleSignup}>
+                Sign Up
+              </Button>
             </div>
           </div>
 
-          <div className="mobile__menu">
-            <span>
-              <i className="ri-menu-line" onClick={menuToggle}></i>
-            </span>
+          <div className="nav__right">
+            <p className="mb-0 d-flex align-items-center gap-2">
+              <i className="ri-phone-line"></i> +91 6283725542
+            </p>
           </div>
         </div>
       </Container>
+      {/* Conditional rendering of login/signup and blog modals */}
+      {showLogin && <Login isOpen={showLogin} toggle={toggleLogin} />}
+      {showSignUp && <Signup isOpen={showSignUp} toggle={toggleSignup} />}
+      {showBlog && <Blog isOpen={showBlog} toggle={toggleBlog} />}
     </header>
   );
 };
