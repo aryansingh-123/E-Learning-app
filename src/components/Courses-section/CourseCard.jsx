@@ -1,6 +1,17 @@
-import React from "react";
+import React,  { useState } from "react";
+import '../Enroll/EnrollmentModal.css'; 
+import { Modal, Button } from 'react-bootstrap';
+
 
 const CourseCard = (props) => {
+  
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  
+
   const { imgUrl, title, lesson, students, rating } = props.item;
 
   return (
@@ -28,7 +39,28 @@ const CourseCard = (props) => {
           </p>
 
           <p className="enroll d-flex align-items-center gap-1">
-            <a href="#"> Enroll Now</a>
+          <Button variant="primary" onClick={handleShow}>
+        Enroll
+      </Button>
+
+      <Modal show={show} onHide={handleClose} className="enrollment-modal">
+        <Modal.Header closeButton>
+          <Modal.Title>Enrollment Information</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {/* Add enrollment information here */}
+          <p>This is the enrollment information.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          {/* Add additional buttons if needed */}
+          <Button variant="secondary" onClick={handleShow}>
+            Enroll
+          </Button>
+        </Modal.Footer>
+      </Modal>
           </p>
         </div>
       </div>

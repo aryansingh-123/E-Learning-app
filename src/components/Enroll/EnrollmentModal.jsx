@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import '../Enroll/EnrollmentModal.css'; // Import your custom CSS file for styling
+import '../Enroll/EnrollmentModal.css'; 
 
 const EnrollmentModal = () => {
   const [show, setShow] = useState(false);
