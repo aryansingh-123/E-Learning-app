@@ -6,13 +6,13 @@ import "./hero-section.css";
 
 const HeroSection = () => {
   const [scrollDir, setScrollDir] = useState(""); // State to track scroll direction
-  const x = useMotionValue(0); // Initialize motion value for X-axis
-  const y = useMotionValue(0); // Initialize motion value for Y-axis
+  const x = useMotionValue(0); // init   motion value for X-axis
+  const y = useMotionValue(0); // init motion value for Y-axis
 
   useEffect(() => {
     const updateMousePosition = (e) => {
-      x.set(e.clientX - window.innerWidth / 2); // Update X-axis motion value based on mouse position
-      y.set(e.clientY - window.innerHeight / 2); // Update Y-axis motion value based on mouse position
+      x.set(e.clientX - window.innerWidth / 2); // Updated X-axis motion value based on mouse position
+      y.set(e.clientY - window.innerHeight / 2); // Updated Y-axis motion value based on mouse position
     };
 
     window.addEventListener("mousemove", updateMousePosition);

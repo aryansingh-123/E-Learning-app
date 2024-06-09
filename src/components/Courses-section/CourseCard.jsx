@@ -48,14 +48,14 @@ const CourseCard = (props) => {
           <Modal.Title>Enrollment Information</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {/* Add enrollment information here */}
+          {/* Added enrollment information here */}
           <p>Click on Enroll Button to get your course.</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          {/* Add additional buttons if needed */}
+          {/* Added additional buttons for enrollment  */}
           <Button variant="secondary" onClick={handleShow}>
             Enroll
           </Button>
