@@ -8,12 +8,9 @@ const SignUp = ({ isOpen, toggle }) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle signup submission
     console.log("Signup submitted with email:", email, "and password:", password);
-    // Clear form fields
     setEmail("");
     setPassword("");
-    // Close modal
     toggle();
   };
 

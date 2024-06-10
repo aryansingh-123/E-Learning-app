@@ -20,7 +20,6 @@ const Home = () => {
   return (
     <Fragment>
       <Header />
-
       <HeroSection />
       <CompanySection />
       <AboutUs />

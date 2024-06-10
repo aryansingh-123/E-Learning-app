@@ -39,8 +39,8 @@ const AboutUs = () => {
                   <div className="single__counter">
                     <CountUp
                       start={0}
-                      end={25}
-                      duration={2}
+                      end={125}
+                      duration={6}
                       suffix="K"
                       startOnMount={false}
                       redraw={true}
@@ -57,7 +57,7 @@ const AboutUs = () => {
                     <p className="counter__title">
                       <strong>
                         Completed Projects
-                        {countingStarted ? ": 25K" : ""}
+                        {countingStarted ? ": 125K" : ""}
                       </strong>
                     </p>
                   </div>
@@ -66,7 +66,7 @@ const AboutUs = () => {
                     <CountUp
                       start={0}
                       end={12}
-                      duration={2}
+                      duration={6}
                       suffix="M"
                       startOnMount={false}
                       redraw={true}
@@ -94,7 +94,7 @@ const AboutUs = () => {
                     <CountUp
                       start={0}
                       end={95}
-                      duration={2}
+                      duration={6}
                       suffix="M"
                       startOnMount={false}
                       redraw={true}
@@ -120,7 +120,7 @@ const AboutUs = () => {
                     <CountUp
                       start={0}
                       end={5}
-                      duration={2}
+                      duration={6}
                       suffix="K"
                       startOnMount={false}
                       redraw={true}

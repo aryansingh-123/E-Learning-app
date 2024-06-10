@@ -9,12 +9,9 @@ const Login = ({ isOpen, toggle }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login submission
     console.log("Login submitted with email:", email, "and password:", password);
-    // Clear form fields
     setEmail("");
     setPassword("");
-    // Close modal
     toggle();
   };
 
@@ -55,7 +52,7 @@ const Login = ({ isOpen, toggle }) => {
         </form>
       </ModalBody>
       <ModalFooter>
-        <p className="mb-0">Don't have an account? <a href="#">Sign Up</a></p>
+        <p className="mb-0">Don't have an account? <a href="/Signup">Sign Up</a></p>
       </ModalFooter>
     </Modal>
   );

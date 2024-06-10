@@ -21,7 +21,7 @@ const navLinks = [
   {
     display: "Blog",
     url: "#",
-    isBlog: true // Indicate that this is the Blog link
+    isBlog: true //blog link indicate
   },
 ];
 
@@ -56,7 +56,7 @@ const Header = () => {
               <ul className="nav__list">
                 {navLinks.map((item, index) => (
                   <li key={index} className="nav__item">
-                    {/* Conditionally render onClick event for Blog link only */}
+                    {/*  render onClick event for Blog link */}
                     {item.isBlog ? (
                       <a href={item.url} onClick={toggleBlog}>{item.display}</a>
                     ) : (
