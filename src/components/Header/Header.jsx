@@ -3,7 +3,7 @@ import { Container, Button } from "reactstrap";
 import "./header.css";
 import Login from "../Login/Login";
 import Signup from "../Signup/SignUp";
-import Blog from "../Blog/Blog"; // Import the Blog component
+import Blog from "../Blog/Blog";
 
 const navLinks = [
   {
@@ -21,7 +21,7 @@ const navLinks = [
   {
     display: "Blog",
     url: "#",
-    isBlog: true //blog link indicate
+    isBlog: true 
   },
 ];
 
@@ -29,12 +29,12 @@ const Header = () => {
   const menuRef = useRef();
   const [showSignUp, setShowSignUp] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
-  const [showBlog, setShowBlog] = useState(false); // State for blog modal
+  const [showBlog, setShowBlog] = useState(false); 
 
   const menuToggle = () => menuRef.current.classList.toggle("active__menu");
   const toggleSignup = () => setShowSignUp(!showSignUp);
   const toggleLogin = () => setShowLogin(!showLogin);
-  const toggleBlog = () => setShowBlog(!showBlog); // Toggle blog modal
+  const toggleBlog = () => setShowBlog(!showBlog); 
 
   const handleDropdownChange = (e) => {
     const selectedCourse = e.target.value;
@@ -94,7 +94,6 @@ const Header = () => {
           </div>
         </div>
       </Container>
-      {/* Conditional rendering of login/signup and blog modals */}
       {showLogin && <Login isOpen={showLogin} toggle={toggleLogin} />}
       {showSignUp && <Signup isOpen={showSignUp} toggle={toggleSignup} />}
       {showBlog && <Blog isOpen={showBlog} toggle={toggleBlog} />}

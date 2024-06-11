@@ -61,7 +61,6 @@ const AboutUs = () => {
                       </strong>
                     </p>
                   </div>
-
                   <div className="single__counter">
                     <CountUp
                       start={0}

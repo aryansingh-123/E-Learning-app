@@ -19,14 +19,12 @@ const EnrollmentModal = () => {
           <Modal.Title>Enrollment Information</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {/* Add enrollment information here */}
           <p>Click on Enroll Button to get your course.</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          {/* Add additional buttons if needed */}
         </Modal.Footer>
       </Modal>
     </>

@@ -18,7 +18,7 @@ import Login from "../components/Login/Login";
 const Home = () => {
  
   return (
-    <Fragment>
+    <Fragment> 
       <Header />
       <HeroSection />
       <CompanySection />

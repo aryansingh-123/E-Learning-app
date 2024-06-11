@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
-import { motion, useMotionValue, useTransform } from "framer-motion"; // Import motion and hooks from framer-motion
+import { motion, useMotionValue, useTransform } from "framer-motion"; 
 import heroImg from "../../assests/images/hero-img1.png";
 import "./hero-section.css";
 
@@ -20,8 +20,8 @@ const HeroSection = () => {
     return () => window.removeEventListener("mousemove", updateMousePosition);
   }, [x, y]);
 
-  const imgX = useTransform(x, [-100, 100], [-20, 20]); // Transform X-axis motion value for image animation
-  const imgY = useTransform(y, [-100, 100], [-20, 20]); // Transform Y-axis motion value for image animation
+  const imgX = useTransform(x, [-100, 100], [-20, 20]); // Transform X-axis motion value of image animation
+  const imgY = useTransform(y, [-100, 100], [-20, 20]); // Transform Y-axis motion value of image animation
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,11 +80,11 @@ const HeroSection = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              style={{ x: imgX, y: imgY }} // Apply transformed motion values to image style
+              style={{ x: imgX, y: imgY }}
               src={heroImg}
               alt=""
               className="w-100 hero__img"
-              onClick={replayAnimation} // Replay animation on image click
+              onClick={replayAnimation}
             />
           </Col>
         </Row>

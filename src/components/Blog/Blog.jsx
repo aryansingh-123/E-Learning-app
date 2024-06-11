@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import "./Blog.css"; // Import custom CSS for styling
+import "./Blog.css";
 
 const Blog = ({ isOpen, toggle }) => {
   return (
@@ -21,7 +21,6 @@ const Blog = ({ isOpen, toggle }) => {
             community offering a wide range of expert-curated courses across
             various domains.
           </p>
-          {/* Your blog content */}
         </div>
       </ModalBody>
       <ModalFooter>
